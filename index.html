@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wukong Adventure</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="top-bar">
+      <div class="brand-mark">
+        <h1 data-i18n="title">Wukong Adventure</h1>
+      </div>
+      <div class="top-actions">
+        <button class="drawer-toggle" type="button" data-drawer-toggle aria-expanded="false"></button>
+        <button class="lang-toggle" type="button" data-lang-toggle></button>
+      </div>
+    </header>
+
+    <section class="hero-drawer" data-drawer-panel hidden>
+      <div class="drawer-grid">
+        <div class="drawer-card compact">
+          <h2 data-i18n="controlsTitle">操作说明</h2>
+          <p data-i18n="controlsLine1">`A / D` 移动，`W` 跳跃，`J` 金箍棒连击，`K` 筋斗突进，`L` 如意横扫</p>
+          <p data-i18n="controlsLine2">`Space` 重新开始，`P` 暂停 / 继续</p>
+        </div>
+        <div class="drawer-card compact">
+          <h2 data-i18n="objectiveTitle">目标</h2>
+          <p data-i18n="objectiveText">清空每一波敌人并推进到裂隙终点。保留高打击频率与稳定帧率。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-panel">
+      <canvas id="game" width="1280" height="720" data-i18n-aria-label="canvasAriaLabel"></canvas>
+
+      <aside class="skill-bar" aria-label="skills">
+        <div class="skill-card" data-skill-card="k">
+          <div class="skill-icon-frame">
+            <svg class="skill-icon" viewBox="0 0 72 72" aria-hidden="true">
+              <defs>
+                <clipPath id="skillClipK">
+                  <rect x="0" y="0" width="72" height="72" rx="14" ry="14"></rect>
+                </clipPath>
+              </defs>
+              <g clip-path="url(#skillClipK)">
+                <rect x="0" y="0" width="72" height="72" rx="14" ry="14" fill="#0f1725"></rect>
+                <image href="" data-skill-image="k" x="0" y="0" width="72" height="72" preserveAspectRatio="xMidYMid slice"></image>
+                <path class="skill-cooldown-mask" data-skill-mask="k"></path>
+                <text class="skill-overlay-time" data-skill-overlay-time="k" x="36" y="40"></text>
+              </g>
+            </svg>
+          </div>
+          <div class="skill-key">K</div>
+        </div>
+
+        <div class="skill-card" data-skill-card="l">
+          <div class="skill-icon-frame">
+            <svg class="skill-icon" viewBox="0 0 72 72" aria-hidden="true">
+              <defs>
+                <clipPath id="skillClipL">
+                  <rect x="0" y="0" width="72" height="72" rx="14" ry="14"></rect>
+                </clipPath>
+              </defs>
+              <g clip-path="url(#skillClipL)">
+                <rect x="0" y="0" width="72" height="72" rx="14" ry="14" fill="#0f1725"></rect>
+                <image href="" data-skill-image="l" x="0" y="0" width="72" height="72" preserveAspectRatio="xMidYMid slice"></image>
+                <path class="skill-cooldown-mask" data-skill-mask="l"></path>
+                <text class="skill-overlay-time" data-skill-overlay-time="l" x="36" y="40"></text>
+              </g>
+            </svg>
+          </div>
+          <div class="skill-key">L</div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
